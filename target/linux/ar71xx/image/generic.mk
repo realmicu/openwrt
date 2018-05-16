@@ -639,6 +639,33 @@ define Device/wndr3700
 endef
 TARGET_DEVICES += wndr3700
 
+define Device/wndr3700-16m
+$(Device/wndr3700)
+  DEVICE_TITLE := NETGEAR WNDR3700 (16MB flash)
+  IMAGE_SIZE = 15872k
+  MTDPARTS = spi0.0:320k(u-boot)ro,128k(u-boot-env)ro,15872k(firmware),64k(art)ro
+  IMAGES := sysupgrade.bin factory.img
+endef
+TARGET_DEVICES += wndr3700-16m
+
+define Device/wndr3700-8m-cu
+$(Device/wndr3700)
+  DEVICE_TITLE := NETGEAR WNDR3700 (8MB flash, compact uboot)
+  IMAGE_SIZE = 7808k
+  MTDPARTS = spi0.0:256k(u-boot)ro,64k(u-boot-env)ro,7808k(firmware),64k(art)ro
+  IMAGES := sysupgrade.bin factory.img
+endef
+TARGET_DEVICES += wndr3700-8m-cu
+
+define Device/wndr3700-16m-cu
+$(Device/wndr3700)
+  DEVICE_TITLE := NETGEAR WNDR3700 (16MB flash, compact uboot)
+  IMAGE_SIZE = 16000k
+  MTDPARTS = spi0.0:256k(u-boot)ro,64k(u-boot-env)ro,16000k(firmware),64k(art)ro
+  IMAGES := sysupgrade.bin factory.img
+endef
+TARGET_DEVICES += wndr3700-16m-cu
+
 define Device/wndr3700v2
   $(Device/wndr3700)
   DEVICE_TITLE := NETGEAR WNDR3700 v2
