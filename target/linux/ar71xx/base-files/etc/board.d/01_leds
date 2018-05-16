@@ -987,6 +987,8 @@ wndap360)
 wndr3700)
 	ucidef_set_led_default "wan" "WAN LED (green)" "netgear:green:wan" "0"
 	ucidef_set_led_usbdev "usb" "USB" "netgear:green:usb" "1-1"
+	ucidef_set_led_wlan "wlan2g" "WLAN2G" "netgear:green:wlan2g" "phy0tpt"
+	ucidef_set_led_wlan "wlan5g" "WLAN5G" "netgear:blue:wlan5g" "phy1tpt"
 	;;
 wi2a-ac200i)
 	ucidef_set_led_default "power" "Power (green)" "nokia:green:power" "1"

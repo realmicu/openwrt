@@ -31,6 +31,9 @@
 #define WNDR3700_GPIO_LED_WPS_GREEN	4
 #define WNDR3700_GPIO_LED_WAN_GREEN	6
 
+#define WNDR3700_GPIO_WMAC0_LED_WLAN2G_GREEN	5
+#define WNDR3700_GPIO_WMAC1_LED_WLAN5G_BLUE	5
+
 #define WNDR3700_GPIO_BTN_WPS		3
 #define WNDR3700_GPIO_BTN_RESET		8
 #define WNDR3700_GPIO_BTN_RFKILL	11
@@ -69,6 +72,22 @@ static struct gpio_led wndr3700_leds_gpio[] __initdata = {
 	}, {
 		.name		= "netgear:green:wan",
 		.gpio		= WNDR3700_GPIO_LED_WAN_GREEN,
+		.active_low	= 1,
+	}
+};
+
+static struct gpio_led wndr3700_wmac0_leds_gpio[] = {
+	{
+		.name		= "netgear:green:wlan2g",
+		.gpio		= WNDR3700_GPIO_WMAC0_LED_WLAN2G_GREEN,
+		.active_low	= 1,
+	}
+};
+
+static struct gpio_led wndr3700_wmac1_leds_gpio[] = {
+	{
+		.name		= "netgear:blue:wlan5g",
+		.gpio		= WNDR3700_GPIO_WMAC1_LED_WLAN5G_BLUE,
 		.active_low	= 1,
 	}
 };
@@ -152,8 +171,12 @@ static void __init wndr3700_setup(void)
 	platform_device_register(&wndr3700_rtl8366s_device);
 	platform_device_register_simple("wndr3700-led-usb", -1, NULL, 0);
 
-	ap9x_pci_setup_wmac_led_pin(0, 5);
-	ap9x_pci_setup_wmac_led_pin(1, 5);
+	ap9x_pci_setup_wmac_led_pin(0, WNDR3700_GPIO_WMAC0_LED_WLAN2G_GREEN);
+	ap9x_pci_setup_wmac_leds(0, wndr3700_wmac0_leds_gpio,
+				 ARRAY_SIZE(wndr3700_wmac0_leds_gpio));
+	ap9x_pci_setup_wmac_led_pin(1, WNDR3700_GPIO_WMAC1_LED_WLAN5G_BLUE);
+	ap9x_pci_setup_wmac_leds(1, wndr3700_wmac1_leds_gpio,
+				 ARRAY_SIZE(wndr3700_wmac1_leds_gpio));
 
 	/* 2.4 GHz uses the first fixed antenna group (1, 0, 1, 0) */
 	ap9x_pci_setup_wmac_gpio(0, (0xf << 6), (0xa << 6));
