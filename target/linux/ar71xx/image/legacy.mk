@@ -935,6 +935,7 @@ $(eval $(call SingleProfile,MyLoader,64k,WPE72_8M,wpe72,,ttyS0,115200,0x800000,8
 $(eval $(call SingleProfile,MyLoader,64k,WPE72_16M,wpe72,,ttyS0,115200,0x1000000,16M))
 
 $(eval $(call SingleProfile,Netgear,64kraw,WNR2200,wnr2200,WNR2200,ttyS0,115200,$$(wnr2200_mtdlayout),0x32323030,wnr2200,"" NA,))
+$(eval $(call SingleProfile,Netgear,64kraw,WNR2200_16M,wnr2200,WNR2200,ttyS0,115200,$$(wnrmod2k_16m_mtdlayout),0x32323030,wnr2200,"" NA,))
 
 $(eval $(call SingleProfile,OpenMesh,squashfs-only,A60,a60,,,,A60))
 $(eval $(call SingleProfile,OpenMesh,squashfs-only,OM2P,om2p,,,,OM2P))
@@ -998,11 +999,17 @@ $(eval $(call SingleProfile,MyLoader,64k,WP543_4M,wp543,,ttyS0,115200,0x400000,4
 $(eval $(call SingleProfile,MyLoader,64k,WPE72_4M,wpe72,,ttyS0,115200,0x400000,4M))
 
 $(eval $(call SingleProfile,Netgear,64kraw,WNR2000V3,wnr2000v3,WNR2000V3,ttyS0,115200,$$(wnr2000v3_mtdlayout),0x32303033,WNR2000V3,"" NA,-H 29763551+04+32))
+$(eval $(call SingleProfile,Netgear,64kraw,WNR2000V3_8M,wnr2000v3,WNR2000V3,ttyS0,115200,$$(wnrmod2k_8m_mtdlayout),0x32303033,WNR2000V3,"" NA,-H 29763551+08+32))
+$(eval $(call SingleProfile,Netgear,64kraw,WNR2000V3_16M,wnr2000v3,WNR2000V3,ttyS0,115200,$$(wnrmod2k_16m_mtdlayout),0x32303033,WNR2000V3,"" NA,-H 29763551+16+32))
 $(eval $(call SingleProfile,NetgearLzma,64kraw,WNR2000V4,wnr2000v4,WNR2000V4,ttyS0,115200,$$(wnr2000v4_mtdlayout),0x32303034,WNR2000V4,"" NA,))
 $(eval $(call SingleProfile,Netgear,64kraw,WNR2000,wnr2000,WNR2000,ttyS0,115200,$$(wnr2000_mtdlayout),0x32303031,WNR2000,"" NA,))
 $(eval $(call SingleProfile,Netgear,64kraw,REALWNR612V2,wnr612v2,WNR612V2,ttyS0,115200,$$(wnr2000v3_mtdlayout),0x32303631,WNR612V2,"",))
+$(eval $(call SingleProfile,Netgear,64kraw,REALWNR612V2_8M,wnr612v2,WNR612V2,ttyS0,115200,$$(wnrmod2k_8m_mtdlayout),0x32303631,WNR612V2,"",))
+$(eval $(call SingleProfile,Netgear,64kraw,REALWNR612V2_16M,wnr612v2,WNR612V2,ttyS0,115200,$$(wnrmod2k_16m_mtdlayout),0x32303631,WNR612V2,"",))
 $(eval $(call SingleProfile,Netgear,64kraw,N150R,n150r,WNR612V2,ttyS0,115200,$$(wnr2000v3_mtdlayout),0x32303631,N150R,"",))
 $(eval $(call SingleProfile,Netgear,64kraw,REALWNR1000V2,wnr1000v2,WNR1000V2,ttyS0,115200,$$(wnr2000v3_mtdlayout),0x31303031,WNR1000V2,"",))
+$(eval $(call SingleProfile,Netgear,64kraw,REALWNR1000V2_8M,wnr1000v2,WNR1000V2,ttyS0,115200,$$(wnrmod2k_8m_mtdlayout),0x31303031,WNR1000V2,"",))
+$(eval $(call SingleProfile,Netgear,64kraw,REALWNR1000V2_16M,wnr1000v2,WNR1000V2,ttyS0,115200,$$(wnrmod2k_16m_mtdlayout),0x31303031,WNR1000V2,"",))
 $(eval $(call SingleProfile,Netgear,64kraw,WNR1000V2_VC,wnr1000v2-vc,WNR1000V2,ttyS0,115200,$$(wnr2000v3_mtdlayout),0x31303030,WNR1000V2-VC,"",))
 $(eval $(call SingleProfile,Netgear,64kraw,WPN824N,wpn824n,WPN824N,ttyS0,115200,$$(wnr2000v3_mtdlayout),0x31313030,WPN824N,"" NA,))
 
