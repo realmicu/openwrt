@@ -85,3 +85,58 @@ For a list of supported devices see the [OpenWrt Hardware Database](https://open
 ## License
 
 OpenWrt is licensed under GPL-2.0
+
+ -----------------------------------------------------
+
+                           _ ___ _
+ _ _ _ ___ ___ _____ ___ _| |_  | |_
+| | | |   |  _|     | . | . |  _| '_|
+|_____|_|_|_| |_|_|_|___|___|___|_,_|
+
+
+wnrmod2k name originates from my first modded router, Netgear WNR2000v3, which
+has been equipped with replaceable SPI NOR flash (4M, 8M and 16M). Since then
+this OpenWrt fork grew to include whole family of Atheros-based WNR models as
+well as selected double-band WNDR boards.
+
+Please visit my U-boot fork https://github.com/realmicu/uboot-wnrmod2k that
+provides working bootloader for flash-modded WNR routers and is a prerequisite
+to use wnrmod2k OpenWrt branch.
+
+Supported modded targets and models with config options are listed below.
+Entries marked with [U] require modified U-boot.
+
+* WNR2000v3 8M flash [U]
+  CONFIG_TARGET_ar71xx_tiny_DEVICE_WNR2000V3_8M
+
+* WNR2000v3 16M flash [U]
+  CONFIG_TARGET_ar71xx_tiny_DEVICE_WNR2000V3_16M
+
+* WNR612v2 8M flash [U]
+  CONFIG_TARGET_ar71xx_tiny_DEVICE_REALWNR612V2_8M
+
+* WNR612v2 16M flash [U]
+  CONFIG_TARGET_ar71xx_tiny_DEVICE_REALWNR612V2_16M
+
+* WNR1000v2 8M flash [U]
+  CONFIG_TARGET_ar71xx_tiny_DEVICE_REALWNR1000V2_8M
+
+* WNR1000v2 16M flash [U]
+  CONFIG_TARGET_ar71xx_tiny_DEVICE_REALWNR1000V2_16M
+
+* WNR2200 16M flash [U]
+  CONFIG_TARGET_ar71xx_generic_DEVICE_WNR2200_16M
+
+* WNDR3700 8M flash, compact u-boot [U]
+  CONFIG_TARGET_ar71xx_generic_DEVICE_wndr3700-8m-cu
+
+* WNDR3700 16M flash [U]
+  CONFIG_TARGET_ar71xx_generic_DEVICE_wndr3700-16m
+
+* WNDR3700 16M flash, compact u-boot [U]
+  CONFIG_TARGET_ar71xx_generic_DEVICE_wndr3700-16m-cu
+
+* WNDR4300 all flash
+  CONFIG_TARGET_ath79_nand_DEVICE_netgear_wndr4300_all
+
+Remaining ath79 versions coming soon...
