@@ -28,6 +28,8 @@ case "$FIRMWARE" in
 		;;
 	netgear,wnr1000-v2|\
 	netgear,wnr2000-v3|\
+	netgear,wnr2000-v3-8m|\
+	netgear,wnr2000-v3-16m|\
 	netgear,wnr612-v2|\
 	on,n150r|\
 	tplink,tl-mr3220-v1|\

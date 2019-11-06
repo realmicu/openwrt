@@ -29,7 +29,9 @@ engenius,enh202-v1)
 	ucidef_set_led_rssi "rssihigh" "RSSIHIGH" "green:rssihigh" "wlan0" "67" "100"
 	;;
 netgear,wnr1000-v2|\
-netgear,wnr2000-v3)
+netgear,wnr2000-v3|\
+netgear,wnr2000-v3-8m|\
+netgear,wnr2000-v3-16m)
 	ucidef_set_led_netdev "wan-amber" "WAN (amber)" "amber:wan" "eth0"
 	ucidef_set_led_switch "lan1green" "LAN1 (green)" "green:lan1" "switch0" "0x02" "0x04"
 	ucidef_set_led_switch "lan2green" "LAN2 (green)" "green:lan2" "switch0" "0x04" "0x04"

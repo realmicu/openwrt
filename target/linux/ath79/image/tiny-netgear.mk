@@ -41,19 +41,38 @@ define Device/netgear_wnr1000-v2
 endef
 TARGET_DEVICES += netgear_wnr1000-v2
 
-define Device/netgear_wnr2000-v3
+define Device/netgear_wnr2000-v3_common
   $(Device/netgear_generic)
   SOC := ar7241
   DEVICE_MODEL := WNR2000
-  DEVICE_VARIANT := v3
   UIMAGE_MAGIC := 0x32303033
   NETGEAR_BOARD_ID := WNR2000V3
+endef
+
+define Device/netgear_wnr2000-v3
+  $(Device/netgear_wnr2000-v3_common)
+  DEVICE_VARIANT := v3
   NETGEAR_HW_ID := 29763551+04+32
   IMAGE_SIZE := 3712k
   IMAGES += factory-NA.img
   IMAGE/factory-NA.img := $$(IMAGE/default) | netgear-dni NA | \
 	check-size
   SUPPORTED_DEVICES += wnr2000-v3
-  DEFAULT := n
 endef
 TARGET_DEVICES += netgear_wnr2000-v3
+
+define Device/netgear_wnr2000-v3-8m
+  $(Device/netgear_wnr2000-v3_common)
+  DEVICE_VARIANT := v3 8M
+  NETGEAR_HW_ID := 29763551+08+32
+  IMAGE_SIZE := 7808k
+endef
+TARGET_DEVICES += netgear_wnr2000-v3-8m
+
+define Device/netgear_wnr2000-v3-16m
+  $(Device/netgear_wnr2000-v3_common)
+  DEVICE_VARIANT := v3 16M
+  NETGEAR_HW_ID := 29763551+16+32
+  IMAGE_SIZE := 16000k
+endef
+TARGET_DEVICES += netgear_wnr2000-v3-16m
