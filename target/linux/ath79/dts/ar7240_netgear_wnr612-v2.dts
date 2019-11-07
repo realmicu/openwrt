@@ -6,3 +6,30 @@
 	compatible = "netgear,wnr612-v2", "qca,ar7240";
 	model = "Netgear WNR612 v2";
 };
+
+&partitions {
+	partition@0 {
+		label = "u-boot";
+		reg = <0x0 0x40000>;
+		read-only;
+	};
+
+	partition@40000 {
+		label = "u-boot-env";
+		reg = <0x40000 0x10000>;
+	};
+
+	partition@50000 {
+		label = "firmware";
+		reg = <0x50000 0x3a0000>;
+		compatible = "openwrt,uimage", "denx,uimage";
+		openwrt,ih-magic = <0x32303631>;
+		openwrt,ih-type = <IH_TYPE_FILESYSTEM>;
+	};
+
+	art: partition@3f0000 {
+		label = "art";
+		reg = <0x3f0000 0x10000>;
+		read-only;
+	};
+};

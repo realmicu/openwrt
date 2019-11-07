@@ -1,18 +1,38 @@
 include ./common-netgear.mk
 
-define Device/netgear_wnr612-v2
+define Device/netgear_wnr612-v2_common
   $(Device/netgear_generic)
   SOC := ar7240
   DEVICE_MODEL := WNR612
-  DEVICE_VARIANT := v2
-  DEVICE_DTS := ar7240_netgear_wnr612-v2
   UIMAGE_MAGIC := 0x32303631
   NETGEAR_BOARD_ID := REALWNR612V2
+  NETGEAR_HW_ID :=
+endef
+
+define Device/netgear_wnr612-v2
+  $(Device/netgear_wnr612-v2_common)
+  DEVICE_VARIANT := v2
+  DEVICE_DTS := ar7240_netgear_wnr612-v2
   IMAGE_SIZE := 3712k
   SUPPORTED_DEVICES += wnr612-v2
-  DEFAULT := n
 endef
 TARGET_DEVICES += netgear_wnr612-v2
+
+define Device/netgear_wnr612-v2-8m
+  $(Device/netgear_wnr612-v2_common)
+  DEVICE_VARIANT := v2 8M
+  DEVICE_DTS := ar7240_netgear_wnr612-v2-8m
+  IMAGE_SIZE := 7808k
+endef
+TARGET_DEVICES += netgear_wnr612-v2-8m
+
+define Device/netgear_wnr612-v2-16m
+  $(Device/netgear_wnr612-v2_common)
+  DEVICE_VARIANT := v2 16M
+  DEVICE_DTS := ar7240_netgear_wnr612-v2-16m
+  IMAGE_SIZE := 16000k
+endef
+TARGET_DEVICES += netgear_wnr612-v2-16m
 
 define Device/on_n150r
   $(Device/netgear_generic)

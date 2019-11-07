@@ -3,8 +3,8 @@
 #include "ar7240_netgear_wnr612-v2.dtsi"
 
 / {
-	compatible = "on,n150r", "qca,ar7240";
-	model = "ON Network N150R";
+	compatible = "netgear,wnr612-v2-8m", "qca,ar7240";
+	model = "Netgear WNR612 v2 (8M)";
 };
 
 &partitions {
@@ -21,13 +21,15 @@
 
 	partition@50000 {
 		label = "firmware";
-		reg = <0x50000 0x3a0000>;
-		compatible = "netgear,uimage";
+		reg = <0x50000 0x7a0000>;
+		compatible = "openwrt,uimage", "denx,uimage";
+		openwrt,ih-magic = <0x32303631>;
+		openwrt,ih-type = <IH_TYPE_FILESYSTEM>;
 	};
 
-	art: partition@3f0000 {
+	art: partition@7f0000 {
 		label = "art";
-		reg = <0x3f0000 0x10000>;
+		reg = <0x7f0000 0x10000>;
 		read-only;
 	};
 };

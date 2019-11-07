@@ -73,35 +73,10 @@
 		reg = <0>;
 		spi-max-frequency = <25000000>;
 
-		partitions {
+		partitions: partitions {
 			compatible = "fixed-partitions";
 			#address-cells = <1>;
 			#size-cells = <1>;
-
-			partition@0 {
-				reg = <0x0 0x40000>;
-				label = "u-boot";
-				read-only;
-			};
-
-			partition@40000 {
-				reg = <0x40000 0x10000>;
-				label = "u-boot-env";
-			};
-
-			partition@50000 {
-				compatible = "openwrt,uimage", "denx,uimage";
-				openwrt,ih-magic = <0x32303631>;
-				openwrt,ih-type = <IH_TYPE_FILESYSTEM>;
-				reg = <0x50000 0x3a0000>;
-				label = "firmware";
-			};
-
-			art: partition@3f0000 {
-				reg = <0x3f0000 0x10000>;
-				label = "art";
-				read-only;
-			};
 		};
 	};
 };
