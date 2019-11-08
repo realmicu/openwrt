@@ -27,6 +27,8 @@ case "$FIRMWARE" in
 		ath9k_patch_mac_crc $(mtd_get_mac_ascii "nvram" "lan_mac") 0x10c
 		;;
 	netgear,wnr1000-v2|\
+	netgear,wnr1000-v2-8m|\
+	netgear,wnr1000-v2-16m|\
 	netgear,wnr2000-v3|\
 	netgear,wnr2000-v3-8m|\
 	netgear,wnr2000-v3-16m|\

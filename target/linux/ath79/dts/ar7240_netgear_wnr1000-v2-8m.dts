@@ -3,8 +3,8 @@
 #include "ar7240_netgear_wnr1000-v2.dtsi"
 
 / {
-	compatible = "netgear,wnr1000-v2", "qca,ar7240";
-	model = "Netgear WNR1000 v2";
+	compatible = "netgear,wnr1000-v2-8m", "qca,ar7240";
+	model = "Netgear WNR1000 v2 (8M)";
 };
 
 &partitions {
@@ -21,15 +21,15 @@
 
 	partition@50000 {
 		label = "firmware";
-		reg = <0x50000 0x3a0000>;
+		reg = <0x50000 0x7a0000>;
 		compatible = "openwrt,uimage", "denx,uimage";
 		openwrt,ih-magic = <0x31303031>;
 		openwrt,ih-type = <IH_TYPE_FILESYSTEM>;
 	};
 
-	art: partition@3f0000 {
+	art: partition@7f0000 {
 		label = "art";
-		reg = <0x3f0000 0x10000>;
+		reg = <0x7f0000 0x10000>;
 		read-only;
 	};
 };
