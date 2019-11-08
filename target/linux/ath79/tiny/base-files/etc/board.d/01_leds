@@ -29,6 +29,8 @@ engenius,enh202-v1)
 	ucidef_set_led_rssi "rssihigh" "RSSIHIGH" "green:rssihigh" "wlan0" "67" "100"
 	;;
 netgear,wnr1000-v2|\
+netgear,wnr1000-v2-8m|\
+netgear,wnr1000-v2-16m|\
 netgear,wnr2000-v3|\
 netgear,wnr2000-v3-8m|\
 netgear,wnr2000-v3-16m)

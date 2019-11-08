@@ -47,19 +47,38 @@ define Device/on_n150r
 endef
 TARGET_DEVICES += on_n150r
 
-define Device/netgear_wnr1000-v2
+define Device/netgear_wnr1000-v2_common
   $(Device/netgear_generic)
   SOC := ar7240
   DEVICE_MODEL := WNR1000
-  DEVICE_VARIANT := v2
   UIMAGE_MAGIC := 0x31303031
   NETGEAR_BOARD_ID := WNR1000V2
+endef
+
+define Device/netgear_wnr1000-v2
+  $(Device/netgear_wnr1000-v2_common)
+  DEVICE_VARIANT := v2
   NETGEAR_HW_ID := 29763331+4+32
   IMAGE_SIZE := 3712k
   SUPPORTED_DEVICES += wnr1000-v2
-  DEFAULT := n
 endef
 TARGET_DEVICES += netgear_wnr1000-v2
+
+define Device/netgear_wnr1000-v2-8m
+  $(Device/netgear_wnr1000-v2_common)
+  DEVICE_VARIANT := v2 8M
+  NETGEAR_HW_ID := 29763331+8+32
+  IMAGE_SIZE := 7808k
+endef
+TARGET_DEVICES += netgear_wnr1000-v2-8m
+
+define Device/netgear_wnr1000-v2-16m
+  $(Device/netgear_wnr1000-v2_common)
+  DEVICE_VARIANT := v2 16M
+  NETGEAR_HW_ID := 29763331+16+32
+  IMAGE_SIZE := 16000k
+endef
+TARGET_DEVICES += netgear_wnr1000-v2-16m
 
 define Device/netgear_wnr2000-v3_common
   $(Device/netgear_generic)
