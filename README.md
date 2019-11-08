@@ -86,6 +86,7 @@ For a list of supported devices see the [OpenWrt Hardware Database](https://open
 
 OpenWrt is licensed under GPL-2.0
 
+
  -----------------------------------------------------
 
                            _ ___ _
@@ -103,29 +104,46 @@ Please visit my U-boot fork https://github.com/realmicu/uboot-wnrmod2k that
 provides working bootloader for flash-modded WNR routers and is a prerequisite
 to use wnrmod2k OpenWrt branch.
 
+Subtargets are not changed even when flash size is increased to keep kernel
+configuration identical.
+
+Extra modifications:
+* Compact U-boot (WNDR3700 only) - by default this router has 5 eraseblocks
+  (320k) for bootloader binary and 2 eraseblocks (128k) for environment; this
+  can safely be resized down to 4 eraseblocks and 1 eraseblock respectively,
+  making layout compatible with single-band routers and freeing 128k of flash
+  space for OpenWrt
+* All Flash (WNDR4300 only) - works with vendor's u-boot (no modification
+  required); utilize all flash space on NAND chip by concatenating
+  (using software mtd-concat) ubi region on firmware partition with unused
+  space past caldata_backup, yielding 119 MBytes in total for OpenWrt software
+
 Supported modded targets and models with config options are listed below.
 Entries marked with [U] require modified U-boot.
 
 * WNR2000v3 8M flash [U]
   CONFIG_TARGET_ar71xx_tiny_DEVICE_WNR2000V3_8M
+  CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr2000-v3-8m
 
 * WNR2000v3 16M flash [U]
   CONFIG_TARGET_ar71xx_tiny_DEVICE_WNR2000V3_16M
+  CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr2000-v3-16m
 
 * WNR612v2 8M flash [U]
   CONFIG_TARGET_ar71xx_tiny_DEVICE_REALWNR612V2_8M
+  CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr612-v2-8m
 
 * WNR612v2 16M flash [U]
   CONFIG_TARGET_ar71xx_tiny_DEVICE_REALWNR612V2_16M
+  CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr612-v2-16m
 
 * WNR1000v2 8M flash [U]
   CONFIG_TARGET_ar71xx_tiny_DEVICE_REALWNR1000V2_8M
+  CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr1000-v2-8m
 
 * WNR1000v2 16M flash [U]
   CONFIG_TARGET_ar71xx_tiny_DEVICE_REALWNR1000V2_16M
-
-* WNR2200 16M flash [U]
-  CONFIG_TARGET_ar71xx_generic_DEVICE_WNR2200_16M
+  CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr1000-v2-16m
 
 * WNDR3700 8M flash, compact u-boot [U]
   CONFIG_TARGET_ar71xx_generic_DEVICE_wndr3700-8m-cu
@@ -139,4 +157,3 @@ Entries marked with [U] require modified U-boot.
 * WNDR4300 all flash
   CONFIG_TARGET_ath79_nand_DEVICE_netgear_wndr4300_all
 
-Remaining ath79 versions coming soon...
