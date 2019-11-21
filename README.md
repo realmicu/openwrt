@@ -119,7 +119,8 @@ Extra modifications:
   space past caldata_backup, yielding 119 MBytes in total for OpenWrt software
 
 Supported modded targets and models with config options are listed below.
-Entries marked with [U] require modified U-boot.
+Entries marked with [U] require modified U-boot.  [I] means that clean image
+installation should be performed (there are issues with sysupgrade).
 
 * WNR2000v3 8M flash [U]
   CONFIG_TARGET_ar71xx_tiny_DEVICE_WNR2000V3_8M
@@ -154,6 +155,6 @@ Entries marked with [U] require modified U-boot.
 * WNDR3700 16M flash, compact u-boot [U]
   CONFIG_TARGET_ar71xx_generic_DEVICE_wndr3700-16m-cu
 
-* WNDR4300 all flash
+* WNDR4300 all flash [I]
   CONFIG_TARGET_ath79_nand_DEVICE_netgear_wndr4300_all
 
