@@ -113,14 +113,9 @@ Extra modifications:
   can safely be resized down to 4 eraseblocks and 1 eraseblock respectively,
   making layout compatible with single-band routers and freeing 128k of flash
   space for OpenWrt
-* All Flash (WNDR4300 only) - works with vendor's u-boot (no modification
-  required); utilize all flash space on NAND chip by concatenating
-  (using software mtd-concat) ubi region on firmware partition with unused
-  space past caldata_backup, yielding 119 MBytes in total for OpenWrt software
 
 Supported modded targets and models with config options are listed below.
-Entries marked with [U] require modified U-boot.  [I] means that clean image
-installation should be performed (there are issues with sysupgrade).
+Entries marked with [U] require modified U-boot.
 
 * WNR2000v3 8M flash [U]
   CONFIG_TARGET_ar71xx_tiny_DEVICE_WNR2000V3_8M
@@ -154,7 +149,4 @@ installation should be performed (there are issues with sysupgrade).
 
 * WNDR3700 16M flash, compact u-boot [U]
   CONFIG_TARGET_ar71xx_generic_DEVICE_wndr3700-16m-cu
-
-* WNDR4300 all flash [I]
-  CONFIG_TARGET_ath79_nand_DEVICE_netgear_wndr4300_all
 
