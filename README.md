@@ -89,11 +89,7 @@ OpenWrt is licensed under GPL-2.0
 
  -----------------------------------------------------
 
-                           _ ___ _
- _ _ _ ___ ___ _____ ___ _| |_  | |_
-| | | |   |  _|     | . | . |  _| '_|
-|_____|_|_|_| |_|_|_|___|___|___|_,_|
-
+# WNRMOD2K
 
 wnrmod2k name originates from my first modded router, Netgear WNR2000v3, which
 has been equipped with replaceable SPI NOR flash (4M, 8M and 16M). Since then
@@ -118,35 +114,35 @@ Supported modded targets and models with config options are listed below.
 Entries marked with [U] require modified U-boot.
 
 * WNR2000v3 8M flash [U]
-  CONFIG_TARGET_ar71xx_tiny_DEVICE_WNR2000V3_8M
-  CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr2000-v3-8m
+  * CONFIG_TARGET_ar71xx_tiny_DEVICE_WNR2000V3_8M
+  * CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr2000-v3-8m
 
 * WNR2000v3 16M flash [U]
-  CONFIG_TARGET_ar71xx_tiny_DEVICE_WNR2000V3_16M
-  CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr2000-v3-16m
+  * CONFIG_TARGET_ar71xx_tiny_DEVICE_WNR2000V3_16M
+  * CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr2000-v3-16m
 
 * WNR612v2 8M flash [U]
-  CONFIG_TARGET_ar71xx_tiny_DEVICE_REALWNR612V2_8M
-  CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr612-v2-8m
+  * CONFIG_TARGET_ar71xx_tiny_DEVICE_REALWNR612V2_8M
+  * CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr612-v2-8m
 
 * WNR612v2 16M flash [U]
-  CONFIG_TARGET_ar71xx_tiny_DEVICE_REALWNR612V2_16M
-  CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr612-v2-16m
+  * CONFIG_TARGET_ar71xx_tiny_DEVICE_REALWNR612V2_16M
+  * CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr612-v2-16m
 
 * WNR1000v2 8M flash [U]
-  CONFIG_TARGET_ar71xx_tiny_DEVICE_REALWNR1000V2_8M
-  CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr1000-v2-8m
+  * CONFIG_TARGET_ar71xx_tiny_DEVICE_REALWNR1000V2_8M
+  * CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr1000-v2-8m
 
 * WNR1000v2 16M flash [U]
-  CONFIG_TARGET_ar71xx_tiny_DEVICE_REALWNR1000V2_16M
-  CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr1000-v2-16m
+  * CONFIG_TARGET_ar71xx_tiny_DEVICE_REALWNR1000V2_16M
+  * CONFIG_TARGET_ath79_tiny_DEVICE_netgear_wnr1000-v2-16m
 
 * WNDR3700 8M flash, compact u-boot [U]
-  CONFIG_TARGET_ar71xx_generic_DEVICE_wndr3700-8m-cu
+  * CONFIG_TARGET_ar71xx_generic_DEVICE_wndr3700-8m-cu
 
 * WNDR3700 16M flash [U]
-  CONFIG_TARGET_ar71xx_generic_DEVICE_wndr3700-16m
+  * CONFIG_TARGET_ar71xx_generic_DEVICE_wndr3700-16m
 
 * WNDR3700 16M flash, compact u-boot [U]
-  CONFIG_TARGET_ar71xx_generic_DEVICE_wndr3700-16m-cu
+  * CONFIG_TARGET_ar71xx_generic_DEVICE_wndr3700-16m-cu
 
